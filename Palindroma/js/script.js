@@ -1,8 +1,8 @@
 // **Palindroma**
 // Chiedere all’utente di inserire una parola
-const inputWord = validation(prompt("inserisci una parola"));
+const inputWord = palindrome(validation(prompt("inserisci una parola")));
 
-palindrome(inputWord);
+
 
 
 
