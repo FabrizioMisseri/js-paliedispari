@@ -1,10 +1,8 @@
 // **Palindroma**
 // Chiedere all’utente di inserire una parola
-const input = palindrome(prompt("inserisci una parola"));
+const inputWord = validation(prompt("inserisci una parola"));
 
-console.log("TXT: ", input);
-
-alert(input);
+palindrome(inputWord);
 
 
 
@@ -46,6 +44,22 @@ function palindrome(word) {
     } else {
         msg = "idiota nn vedi che ci sono lettere diverse";
     }
+    
+    return alert(msg);
+}
 
-    return msg;
+
+/**
+ * Description
+ * @param {string} word è la parola da inserire per verificare che effetivamente l' utente ha inserito una stringa
+ * @returns {string} dato verificato
+ */
+function validation(word) {
+
+    while (word % 1 === 0) {
+        alert("hai inserito un numero");
+        word = prompt("Rprova, inserisci una parola")
+    }
+
+    return word;
 }
