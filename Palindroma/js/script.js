@@ -41,7 +41,7 @@ function palindrome(word) {
 
     let msg;
 
-    if (checkPalindrome = true) {
+    if (checkPalindrome === true) {
         msg = "non ci vuole un genio per capire che la tua parola è un palindromo";
     } else {
         msg = "idiota nn vedi che ci sono lettere diverse";
@@ -49,4 +49,3 @@ function palindrome(word) {
 
     return msg;
 }
-
