@@ -12,9 +12,9 @@ for (i = 0; i < (arrayLength); i++) {
     let arrayLengthMinus = ((arrayLength - 1) - i);
     if (array[i] != array[arrayLengthMinus]) {
         checkPalindrome = false;
-        console.log("controllo boolF", checkPalindrome);
+        console.log("controllo checkPalindrome", checkPalindrome);
     }
 }
 
-console.log("boolFalse", checkPalindrome);
+console.log("checkPalindrome è", checkPalindrome);
 
