@@ -5,8 +5,9 @@ const userChoiceChecked = OddOrEvenValidatorChoice(userChoice);
 
 let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
 let userNumberChecked = numberValidator(userNumber);
-console.log(userNumberChecked);
-const userNumberChecked1to5 = Validator1to5(userChoiceChecked);
+console.log("if numero o stringa", typeof(userNumberChecked), userNumberChecked);
+const userNumberChecked1to5 = numberValidator1to5(userNumberChecked);
+console.log("numero 1 to 5", userNumberChecked1to5);
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 const cpuNumber = randomNumber1to5();
 console.log(cpuNumber);
@@ -87,6 +88,22 @@ function OddOrEvenValidatorChoice(checkPariDispari) {
 function numberValidator(checkNumber) {
     while (checkNumber % 1 !== 0) {
         checkNumber = parseInt(prompt("per favore inserisci un numero"));
+    }
+
+    const output = checkNumber;
+
+    return output;
+}
+
+
+/**
+ * Description
+ * @param {number} checkNumber valore input da verificare SE tra 1 e 5
+ * @returns {number} output verificato numero tra 1 e 5
+ */
+function numberValidator1to5(checkNumber) {
+    while (checkNumber < 1 || checkNumber > 5){
+        checkNumber = parseInt(prompt("il numero scelto non è compreso tra 1 e 5. Perfavore riprova"))
     }
 
     const output = checkNumber;
