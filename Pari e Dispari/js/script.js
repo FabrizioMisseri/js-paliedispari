@@ -3,12 +3,15 @@
 let userChoice = String(prompt("scegli tra pari o dispari"));
 const userChoiceChecked = OddOrEvenValidatorChoice(userChoice);
 
-const userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
+let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
+let userNumberChecked = numberValidator(userNumber);
+console.log(userNumberChecked);
+const userNumberChecked1to5 = Validator1to5(userChoiceChecked);
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 const cpuNumber = randomNumber1to5();
 console.log(cpuNumber);
 // Sommiamo i due numeri
-const sum = cpuNumber + userNumber;
+const sum = cpuNumber + userNumberChecked1to5;
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 const result = OddEven(sum);
 // Dichiariamo chi ha vinto.
@@ -72,5 +75,21 @@ function OddOrEvenValidatorChoice(checkPariDispari) {
 
     const output = checkPariDispari; 
     
+    return output;
+}
+
+
+/**
+ * Description
+ * @param {number} checkNumber valore da verificare se numerico
+ * @returns {number} output verificata identità numerica
+ */
+function numberValidator(checkNumber) {
+    while (checkNumber % 1 !== 0) {
+        checkNumber = parseInt(prompt("per favore inserisci un numero"));
+    }
+
+    const output = checkNumber;
+
     return output;
 }
