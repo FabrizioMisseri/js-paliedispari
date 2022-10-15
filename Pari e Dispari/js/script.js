@@ -13,9 +13,9 @@ const result = OddEven(sum);
 let msg;
 
 if (result === userChoice){
-    msg = "you win";
+    msg = `you win ${sum}`;
 } else {
-    msg = "you lose";
+    msg = `you lose ${sum}`;
 }
 alert(msg);
 
