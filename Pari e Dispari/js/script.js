@@ -4,15 +4,12 @@ let userChoice = String(prompt("scegli tra pari o dispari"));
 const userChoiceChecked = OddOrEvenValidatorChoice(userChoice);
 
 let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
-let userNumberChecked = numberValidator(userNumber);
-console.log("if numero o stringa", typeof(userNumberChecked), userNumberChecked);
-const userNumberChecked1to5 = numberValidator1to5(userNumberChecked);
-console.log("numero 1 to 5", userNumberChecked1to5);
+let userNumberChecked = numberValidator1to5(userNumber);
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 const cpuNumber = randomNumber1to5();
 console.log(cpuNumber);
 // Sommiamo i due numeri
-const sum = cpuNumber + userNumberChecked1to5;
+const sum = cpuNumber + userNumberChecked;
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 const result = OddEven(sum);
 // Dichiariamo chi ha vinto.
@@ -82,28 +79,12 @@ function OddOrEvenValidatorChoice(checkPariDispari) {
 
 /**
  * Description
- * @param {number} checkNumber valore da verificare se numerico
- * @returns {number} output verificata identità numerica
- */
-function numberValidator(checkNumber) {
-    while (checkNumber % 1 !== 0) {
-        checkNumber = parseInt(prompt("per favore inserisci un numero"));
-    }
-
-    const output = checkNumber;
-
-    return output;
-}
-
-
-/**
- * Description
- * @param {number} checkNumber valore input da verificare SE tra 1 e 5
+ * @param {number} checkNumber valore input da verificare SE numero e SE tra 1 e 5
  * @returns {number} output verificato numero tra 1 e 5
  */
 function numberValidator1to5(checkNumber) {
-    while (checkNumber < 1 || checkNumber > 5){
-        checkNumber = parseInt(prompt("il numero scelto non è compreso tra 1 e 5. Perfavore riprova"))
+    while (checkNumber % 1 !== 0 || (checkNumber < 1 || checkNumber > 5)){
+        checkNumber = parseInt(prompt("Non hai inserito un numero da 1 a 5. Perfavore riprova"))
     }
 
     const output = checkNumber;
