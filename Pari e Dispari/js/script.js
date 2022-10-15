@@ -1,6 +1,8 @@
 // **Pari e Dispari**
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-const userChoice = prompt("scegli pari o dispari");
+let userChoice = String(prompt("scegli tra pari o dispari"));
+const userChoiceChecked = OddOrEvenValidatorChoice(userChoice);
+
 const userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 const cpuNumber = randomNumber1to5();
@@ -12,7 +14,7 @@ const result = OddEven(sum);
 // Dichiariamo chi ha vinto.
 let msg;
 
-if (result === userChoice){
+if (result === userChoiceChecked){
     msg = `you win ${sum}`;
 } else {
     msg = `you lose ${sum}`;
@@ -50,5 +52,25 @@ function OddEven(number) {
         output = "dispari";
     }
 
+    return output;
+}
+
+
+/**
+ * Description
+ * @param {string} checkPariDispari stringa che può assumere solo valore: "pari" o "dispari"
+ * @returns {string} output stringa verificata
+ */
+function OddOrEvenValidatorChoice(checkPariDispari) {
+    
+    const pari = "pari";
+    const dispari = "dispari";
+
+    while (checkPariDispari !== pari && checkPariDispari !== dispari) {
+        checkPariDispari = prompt("Non hai scelto pari o dispari. Perfavore riprova");
+        }
+
+    const output = checkPariDispari; 
+    
     return output;
 }
