@@ -1,7 +1,7 @@
 // **Palindroma**
 // Chiedere all’utente di inserire una parola
 const inputWord = palindrome(validation(prompt("inserisci una parola")));
-
+alert (inputWord);
 
 
 
@@ -45,7 +45,7 @@ function palindrome(word) {
         msg = "idiota nn vedi che ci sono lettere diverse";
     }
     
-    return alert(msg);
+    return msg;
 }
 
 
